@@ -70,7 +70,7 @@ button{font:inherit;color:inherit}
 .banda{padding-block:clamp(76px,12vw,132px)}
 .banda-negra{background:var(--negro);color:var(--blanco);--suave:var(--gris-claro);--acento:var(--rosa);--linea:var(--linea-oscura)}
 .banda-blanca{background:var(--blanco);color:var(--negro);--suave:var(--gris);--acento:var(--rosa-hondo);--linea:var(--linea-clara)}
-.banda-rosa{background:var(--rosa-palido);color:var(--negro);--suave:var(--gris);--acento:var(--rosa-hondo);--linea:var(--linea-clara)}
+.banda-negra+.banda-negra{border-top:1px solid var(--linea-oscura)}
 
 .eyebrow{
   display:inline-flex;align-items:center;gap:.9em;margin:0;
@@ -245,34 +245,17 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
 
 /* ---------- Fotos ---------- */
 .galeria{
-  list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:clamp(22px,4vw,40px) clamp(14px,3vw,32px);
+  list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(6px,1.6vw,14px);
 }
-.foto-item{display:grid;gap:12px;align-content:start;min-width:0}
-.foto-item:nth-child(3n+1){--giro:-1.6deg}
-.foto-item:nth-child(3n+2){--giro:1.2deg}
-.foto-item:nth-child(3n){--giro:-.7deg}
+.foto-item{min-width:0}
 .foto{
-  display:block;width:100%;padding:clamp(6px,1.5vw,10px);background:var(--blanco);border:0;border-radius:2px;
-  box-shadow:0 20px 40px -18px var(--sombra);transform:rotate(var(--giro,0deg));cursor:zoom-in;
-  transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s;
+  display:block;width:100%;padding:clamp(3px,.8vw,6px);background:var(--blanco);border:0;border-radius:2px;
+  box-shadow:0 14px 30px -16px var(--sombra);cursor:zoom-in;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s;
 }
-.foto:disabled{cursor:default}
-@media (hover:hover){.foto:not(:disabled):hover{transform:rotate(0) translateY(-6px) scale(1.02);box-shadow:0 30px 50px -20px var(--sombra)}}
-.foto-marco{position:relative;display:block;aspect-ratio:4/5;max-width:100%;overflow:hidden;background:var(--negro-2)}
-.foto-marco img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.sin-foto .foto-marco img{display:none}
-.foto-vacia{
-  position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:.3rem;
-  background:radial-gradient(circle at 50% 42%,var(--negro-3),var(--negro-2) 72%);
-}
-.foto-vacia-num{font-family:var(--font-display);font-style:italic;font-size:clamp(1.9rem,7vw,3rem);line-height:1}
-.foto-vacia-txt{display:none;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gris-claro)}
-.sin-foto .foto-vacia-txt{display:block}
-.foto-pie{margin:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 .6em;padding-inline:4px}
-.foto-pie:empty{display:none}
-.foto-anio{font-family:var(--font-display);font-style:italic;font-size:1.22rem;color:var(--rosa)}
-.foto-txt{font-size:.92rem;color:var(--suave)}
+@media (hover:hover){.foto:hover{transform:translateY(-4px) scale(1.03);box-shadow:0 24px 40px -18px var(--sombra)}}
+.foto img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;background:var(--negro-3)}
 
 .visor{
   position:fixed;inset:0;z-index:70;background:var(--velo);
@@ -291,10 +274,10 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
 .visor-next{grid-area:next;justify-self:start}
 .visor-cerrar{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px))}
 
-/* ---------- Tarjeta de detalles + mapa ---------- */
+/* ---------- Tarjeta de detalles ---------- */
 .tarjeta{
   max-width:660px;margin-inline:auto;padding:clamp(9px,2vw,14px);color:var(--negro);background:var(--blanco);
-  box-shadow:0 40px 80px -36px var(--sombra-suave),0 2px 6px var(--sombra-suave);
+  box-shadow:0 40px 90px -30px var(--resplandor);
 }
 .tarjeta-borde{
   position:relative;text-align:center;border:1px solid var(--negro);
@@ -311,10 +294,6 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
 .detalles dd{margin:0;font-family:var(--font-display);font-size:1.24rem;line-height:1.35;text-wrap:balance}
 .detalles dd small{display:block;margin-top:4px;font-family:var(--font-body);font-size:.92rem;color:var(--gris)}
 .acciones-nota{margin:14px 0 0;font-size:.85rem;color:var(--gris);text-wrap:balance}
-.mapa{max-width:660px;margin:clamp(28px,5vw,40px) auto 0;padding:clamp(8px,1.6vw,12px);background:var(--blanco);box-shadow:0 30px 70px -36px var(--sombra-suave),0 2px 6px var(--sombra-suave)}
-.mapa iframe{display:block;width:100%;max-width:100%;aspect-ratio:4/3;border:0;background:var(--blanco-sombra)}
-.mapa figcaption{display:flex;align-items:center;gap:.6em;padding:12px 4px 2px;font-size:.92rem;color:var(--gris)}
-.mapa figcaption .ico{color:var(--rosa-hondo)}
 
 /* ---------- Tormenta de sobres ---------- */
 .sobres{position:relative;overflow:hidden}
@@ -373,9 +352,8 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
 @media (min-width:700px){
   .visor{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"prev fig next";align-items:center;padding-top:max(24px,env(safe-area-inset-top,0px))}
   .visor-fig img{max-height:84vh;max-height:84dvh}
-  .mapa iframe{aspect-ratio:16/10}
 }
-@media (min-width:760px){.galeria{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:760px){.galeria{grid-template-columns:repeat(4,minmax(0,1fr))}}
 @media (min-width:880px){
   .ella-grid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
   .sobres-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
@@ -479,7 +457,7 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
     </div>
   </section>
 
-  <section class="banda banda-rosa" id="evento" aria-labelledby="evento-titulo">
+  <section class="banda banda-negra" id="evento" aria-labelledby="evento-titulo">
     <div class="wrap">
       <article class="tarjeta" data-revelar>
         <div class="tarjeta-borde">
@@ -500,10 +478,6 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
           <p class="acciones-nota">Al confirmar se abre WhatsApp con tu mensaje listo para enviar.</p>
         </div>
       </article>
-      <figure class="mapa" data-revelar>
-        <iframe id="mapa" title="Mapa del lugar de la celebración" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-        <figcaption><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><span data-campo="direccionCompleta"></span></figcaption>
-      </figure>
     </div>
   </section>
 
@@ -539,13 +513,7 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
 
 <template id="plantilla-foto">
   <li class="foto-item" data-revelar>
-    <button class="foto" type="button">
-      <span class="foto-marco">
-        <span class="foto-vacia" aria-hidden="true"><span class="foto-vacia-num foil"></span><span class="foto-vacia-txt">Foto pendiente</span></span>
-        <img alt="" decoding="async" loading="lazy">
-      </span>
-    </button>
-    <p class="foto-pie"></p>
+    <button class="foto" type="button"><img alt="" decoding="async" loading="lazy" width="600" height="600"></button>
   </li>
 </template>
 
@@ -597,16 +565,14 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
       ]
     },
 
-    // Pon las fotos en la carpeta "fotos" y agrégalas aquí. "titulo" y "texto" son opcionales.
-    // Ejemplo: { archivo: "fotos/foto1.jpg", titulo: "1976", texto: "Sus primeros años" }
+    // Galería: cada foto está cuadrada en galeria/mini y completa en galeria/grande (01.jpg, 02.jpg…).
     // Si la lista está vacía, la sección de fotos no se muestra.
-    fotos: [],
+    fotos: Array.from({ length: 44 }, (_, i) => `${String(i + 1).padStart(2, "0")}.jpg`),
 
     regalo: {
       titulo: "Tormenta de sobres",
       texto: [
-        "Tu compañía es el mejor regalo. Si además quieres tener un detalle con ella, la celebración será con tormenta de sobres.",
-        "Cualquier aporte, grande o pequeño, lo va a recibir con mucho cariño."
+        "Tu compañía es el mejor regalo. Si además quieres tener un detalle con ella, la celebración será con tormenta de sobres."
       ],
       pasos: [
         "Prepara un sobre con el aporte que quieras darle.",
@@ -653,7 +619,6 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
     hora,
     lugarPrincipal: CONFIG.lugar || CONFIG.direccion,
     lugarDetalle: CONFIG.lugar ? `${CONFIG.direccion} · ${zonaLugar}` : zonaLugar,
-    direccionCompleta,
     vestimenta: CONFIG.vestimenta,
     firma: CONFIG.firma
   };
@@ -671,9 +636,8 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
   $("#ella-titulo").textContent = CONFIG.sobreElla.titulo;
   parrafos($("#ella-desc"), CONFIG.sobreElla.texto);
 
-  /* ---------- Mapa y WhatsApp ---------- */
+  /* ---------- Cómo llegar y WhatsApp ---------- */
   const consultaMapa = `${direccionCompleta}, Colombia`;
-  $("#mapa").src = `https://maps.google.com/maps?q=${enc(consultaMapa)}&z=16&hl=es&output=embed`;
   $("#btn-maps").href = CONFIG.enlaceGoogleMaps || `https://www.google.com/maps/search/?api=1&query=${enc(consultaMapa)}`;
   const wa = CONFIG.confirmacion.whatsapp.replace(/\D/g, "");
   $("#btn-confirmar").href = `https://wa.me/${wa}?text=${enc(CONFIG.confirmacion.mensaje)}`;
@@ -913,26 +877,15 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
   const galeria = $("#galeria");
   const plantilla = $("#plantilla-foto");
   if (!CONFIG.fotos.length) $("#fotos").hidden = true;
-  CONFIG.fotos.forEach((f, i) => {
+  CONFIG.fotos.forEach((archivo, i) => {
     const li = plantilla.content.firstElementChild.cloneNode(true);
-    const boton = $(".foto", li), img = $("img", li), pie = $(".foto-pie", li);
-    const titulo = f.titulo || "", texto = f.texto || "";
-    const descripcion = [titulo, texto].filter(Boolean).join(": ");
-    li.style.setProperty("--d", `${(i % 3) * .12}s`);
-    $(".foto-vacia-num", li).textContent = titulo || String(i + 1).padStart(2, "0");
-    if (titulo) pie.append(Object.assign(document.createElement("span"), { className: "foto-anio", textContent: titulo }));
-    if (texto) pie.append(Object.assign(document.createElement("span"), { className: "foto-txt", textContent: texto }));
-    li.dataset.titulo = titulo;
-    li.dataset.texto = texto;
-    img.alt = descripcion ? `${CONFIG.nombre}, ${descripcion}` : `Foto de ${CONFIG.nombre}`;
-    boton.setAttribute("aria-label", descripcion ? `Ver foto: ${descripcion}` : `Ver foto ${i + 1}`);
-    const sinFoto = () => {
-      li.classList.add("sin-foto");
-      boton.disabled = true;
-      boton.setAttribute("aria-label", `Foto ${i + 1} pendiente`);
-    };
-    if (f.archivo) { img.addEventListener("error", sinFoto, { once: true }); img.src = f.archivo; }
-    else sinFoto();
+    const boton = $(".foto", li), img = $("img", li);
+    li.style.setProperty("--d", `${(i % 4) * .08}s`);
+    li.dataset.grande = `galeria/grande/${archivo}`;
+    img.alt = `Recuerdo ${i + 1}`;
+    boton.setAttribute("aria-label", `Ver la foto ${i + 1} en grande`);
+    img.addEventListener("error", () => li.remove(), { once: true });
+    img.src = `galeria/mini/${archivo}`;
     boton.addEventListener("click", () => abrirVisor(li));
     galeria.append(li);
   });
@@ -941,20 +894,17 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
   let listaVisor = [], posVisor = 0, origenVisor = null;
   const pintarVisor = () => {
     const li = listaVisor[posVisor];
-    const img = $("img", li);
-    visorImg.src = img.currentSrc || img.src;
-    visorImg.alt = img.alt;
-    const partes = [];
-    if (li.dataset.titulo) partes.push(Object.assign(document.createElement("b"), { textContent: li.dataset.titulo }));
-    if (li.dataset.texto) partes.push(li.dataset.texto);
-    visorPie.replaceChildren(...partes);
+    visorImg.src = li.dataset.grande;
+    visorImg.alt = $("img", li).alt;
+    visorPie.textContent = `${posVisor + 1} de ${listaVisor.length}`;
     const unica = listaVisor.length < 2;
     $("#visor-prev").disabled = unica;
     $("#visor-next").disabled = unica;
+    if (!unica) new Image().src = listaVisor[(posVisor + 1) % listaVisor.length].dataset.grande;
     if (!reducido && visorImg.animate) visorImg.animate([{ opacity: 0, transform: "scale(.97)" }, { opacity: 1, transform: "none" }], { duration: 320, easing: "ease-out" });
   };
   function abrirVisor(li) {
-    listaVisor = $$(".foto-item:not(.sin-foto)", galeria);
+    listaVisor = $$(".foto-item", galeria);
     posVisor = Math.max(0, listaVisor.indexOf(li));
     origenVisor = $(".foto", li);
     pintarVisor();
