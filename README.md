@@ -1,6 +1,6 @@
 # Los 50 de Liceth Yaneth
 
-Invitación web de cumpleaños: https://sebastian1028.github.io/cumple-liseth/
+Invitación web de cumpleaños: https://sebastian1028.github.io/cumple-liceth/
 
 Hecha con React + Vite + GSAP. Los datos se cambian en `src/config.js`; las fotos están en `public/galeria/mini` (cuadradas) y `public/galeria/grande` (completas).
 
