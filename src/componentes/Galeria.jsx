@@ -100,7 +100,7 @@ export default function Galeria({ onAbrir }) {
   );
 
   return (
-    <section className="banda fotos" id="fotos" aria-labelledby="fotos-titulo" ref={raiz}>
+    <section className="banda banda-blanca fotos" id="fotos" aria-labelledby="fotos-titulo" ref={raiz}>
       <div className="wrap">
         <div className="sec-cabeza centro">
           <p className="eyebrow">Recuerdos</p>

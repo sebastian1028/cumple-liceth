@@ -123,7 +123,7 @@ export default function Cuenta() {
   const [titulo, pie] = TEXTOS[tiempo.estado];
 
   return (
-    <section className="banda cuenta" id="cuenta" aria-labelledby="cuenta-titulo" ref={raiz}>
+    <section className="banda banda-rosa cuenta" id="cuenta" aria-labelledby="cuenta-titulo" ref={raiz}>
       <div className="wrap">
         <div className="sec-cabeza centro">
           <p className="eyebrow">Cuenta regresiva</p>

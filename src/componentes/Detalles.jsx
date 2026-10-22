@@ -24,7 +24,7 @@ export default function Detalles() {
   );
 
   return (
-    <section className="banda evento" id="evento" aria-labelledby="evento-titulo" ref={raiz}>
+    <section className="banda banda-rosa evento" id="evento" aria-labelledby="evento-titulo" ref={raiz}>
       <div className="wrap">
         <article className="tarjeta">
           <div className="tarjeta-interior">
@@ -67,14 +67,14 @@ export default function Detalles() {
               </div>
             </dl>
             <div className="acciones">
-              <a className="btn btn-blanco aparece" href={enlaceMaps} target="_blank" rel="noopener">
+              <a className="btn btn-linea aparece" href={enlaceMaps} target="_blank" rel="noopener">
                 <svg className="ico" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z" />
                   <circle cx="12" cy="10" r="2.3" />
                 </svg>
                 Cómo llegar
               </a>
-              <a className="btn btn-rosa aparece" href={enlaceWhatsapp} target="_blank" rel="noopener">
+              <a className="btn btn-negro aparece" href={enlaceWhatsapp} target="_blank" rel="noopener">
                 <svg className="ico" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 5h16v11H9l-5 4z" />
                 </svg>

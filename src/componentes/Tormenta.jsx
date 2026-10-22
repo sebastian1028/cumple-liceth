@@ -75,7 +75,7 @@ export default function Tormenta() {
   );
 
   return (
-    <section className="banda sobres" id="regalo" aria-labelledby="regalo-titulo" ref={raiz}>
+    <section className="banda banda-blanca sobres" id="regalo" aria-labelledby="regalo-titulo" ref={raiz}>
       <div className="tormenta" aria-hidden="true">
         {sobres.map((s) => (
           <svg

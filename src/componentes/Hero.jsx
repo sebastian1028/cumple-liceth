@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import { CONFIG } from "../config.js";
 import { fechaCorta, hora } from "../lib/datos.js";
 import { irA, reducido } from "../lib/movimiento.js";
-import Chispas from "./Chispas.jsx";
 
 export default function Hero({ iniciar }) {
   const raiz = useRef(null);
@@ -45,14 +44,13 @@ export default function Hero({ iniciar }) {
 
   return (
     <header className="hero" id="inicio" ref={raiz}>
-      <Chispas />
       <div className="wrap hero-inner">
         <p className="eyebrow centro hero-eyebrow">Te invitamos a celebrar</p>
         <p className="hero-cifra" aria-hidden="true">
           {String(CONFIG.edad)
             .split("")
             .map((d, i) => (
-              <span className="hero-digito foil" key={i}>
+              <span className="hero-digito" key={i}>
                 {d}
               </span>
             ))}

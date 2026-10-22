@@ -54,7 +54,7 @@ export default function Ella() {
   );
 
   return (
-    <section className="banda ella" id="ella" aria-labelledby="ella-titulo" ref={raiz}>
+    <section className="banda banda-blanca ella" id="ella" aria-labelledby="ella-titulo" ref={raiz}>
       <div className="wrap ella-grid">
         <div className="ella-texto">
           <p className="eyebrow">La cumpleañera</p>

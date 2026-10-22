@@ -12,7 +12,7 @@ function preparar() {
     document.body.append(lienzo);
     ctx = lienzo.getContext("2d");
     const estilo = getComputedStyle(document.documentElement);
-    colores = ["--rosa", "--rosa-claro", "--rosa-hondo", "--blanco", "--rosa-brillo"].map((v) =>
+    colores = ["--rosa", "--negro", "--rosa-medio", "--rosa", "--blanco"].map((v) =>
       estilo.getPropertyValue(v).trim()
     );
   }
