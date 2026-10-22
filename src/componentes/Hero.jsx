@@ -65,9 +65,11 @@ export default function Hero({ iniciar }) {
         <div className="hero-nombre-wrap">
           <h1 className="hero-nombre">
             <span className="sr-only">Los {CONFIG.edad} años de </span>
-            {CONFIG.nombre}
+            {CONFIG.nombrePortada}
           </h1>
-          <p className="hero-apellidos">{CONFIG.apellidos}</p>
+          <p className="hero-apellidos">
+            {CONFIG.nombre} {CONFIG.apellidos}
+          </p>
         </div>
         <p className="hero-fecha">
           {fechaCorta} · {hora}

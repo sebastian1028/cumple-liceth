@@ -175,8 +175,8 @@ a { color: inherit; }
   color: var(--negro); text-wrap: balance;
 }
 .hero-apellidos {
-  margin: 0.5em 0 0; padding-left: 0.42em;
-  font-size: 0.8rem; letter-spacing: 0.42em; text-transform: uppercase; color: var(--negro); text-wrap: balance;
+  margin: 0.5em 0 0; padding-left: 0.32em; max-width: 30em;
+  font-size: 0.78rem; letter-spacing: 0.32em; line-height: 1.8; text-transform: uppercase; color: var(--negro); text-wrap: balance;
 }
 .hero-fecha {
   margin: clamp(16px, 3vh, 32px) 0 0;

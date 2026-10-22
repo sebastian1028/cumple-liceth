@@ -4,6 +4,7 @@
 export const CONFIG = {
   nombre: "Liseth Yaneth",
   apellidos: "Santafe Vasquez",
+  nombrePortada: "Yaneth Santafe", // El nombre grande en letra cursiva de la portada
   edad: 50,
   fechaNacimiento: "1976-10-27", // AAAA-MM-DD
 
