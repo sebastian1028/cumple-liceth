@@ -71,7 +71,6 @@ button{font:inherit;color:inherit}
 .banda-negra{background:var(--negro);color:var(--blanco);--suave:var(--gris-claro);--acento:var(--rosa);--linea:var(--linea-oscura)}
 .banda-blanca{background:var(--blanco);color:var(--negro);--suave:var(--gris);--acento:var(--rosa-hondo);--linea:var(--linea-clara)}
 .banda-rosa{background:var(--rosa-palido);color:var(--negro);--suave:var(--gris);--acento:var(--rosa-hondo);--linea:var(--linea-clara)}
-.banda-fucsia{background:var(--rosa);color:var(--negro);--suave:var(--negro-2);--acento:var(--negro);--linea:rgba(17,12,15,.25)}
 
 .eyebrow{
   display:inline-flex;align-items:center;gap:.9em;margin:0;
@@ -311,6 +310,7 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
 .detalles dt{margin-bottom:6px;font-size:.7rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--rosa-hondo)}
 .detalles dd{margin:0;font-family:var(--font-display);font-size:1.24rem;line-height:1.35;text-wrap:balance}
 .detalles dd small{display:block;margin-top:4px;font-family:var(--font-body);font-size:.92rem;color:var(--gris)}
+.acciones-nota{margin:14px 0 0;font-size:.85rem;color:var(--gris);text-wrap:balance}
 .mapa{max-width:660px;margin:clamp(28px,5vw,40px) auto 0;padding:clamp(8px,1.6vw,12px);background:var(--blanco);box-shadow:0 30px 70px -36px var(--sombra-suave),0 2px 6px var(--sombra-suave)}
 .mapa iframe{display:block;width:100%;max-width:100%;aspect-ratio:4/3;border:0;background:var(--blanco-sombra)}
 .mapa figcaption{display:flex;align-items:center;gap:.6em;padding:12px 4px 2px;font-size:.92rem;color:var(--gris)}
@@ -342,13 +342,6 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
 .pasos{list-style:none;counter-reset:paso;margin:12px 0 0;padding:0;display:grid;gap:14px;text-align:left;max-width:34ch}
 .pasos li{counter-increment:paso;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:baseline;color:var(--gris-claro)}
 .pasos li::before{content:counter(paso);font-family:var(--font-display);font-style:italic;font-size:1.5rem;line-height:1;color:var(--rosa)}
-
-/* ---------- Confirmar ---------- */
-.confirma-inner{display:grid;justify-items:center;text-align:center}
-.confirma-texto{margin:1em 0 0;max-width:44ch;color:var(--suave);text-wrap:balance}
-.confirma .acciones{margin-top:26px}
-.confirma-num{margin:22px 0 0;font-size:.92rem;color:var(--suave)}
-.confirma-num span{color:inherit;font-weight:500;-webkit-user-select:all;user-select:all;white-space:nowrap}
 
 /* ---------- Pie ---------- */
 .pie{padding-block:clamp(70px,11vw,120px)}
@@ -502,9 +495,9 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
           </dl>
           <div class="acciones">
             <a class="btn btn-negro" id="btn-maps" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg>Cómo llegar</a>
-            <a class="btn btn-linea" id="btn-waze" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4 4 11l7 2 2 7z"/></svg>Waze</a>
-            <a class="btn btn-linea" id="btn-calendario" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Agendar</a>
+            <a class="btn btn-rosa" id="btn-confirmar" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Confirmar asistencia</a>
           </div>
+          <p class="acciones-nota">Al confirmar se abre WhatsApp con tu mensaje listo para enviar.</p>
         </div>
       </article>
       <figure class="mapa" data-revelar>
@@ -534,18 +527,6 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
     </div>
   </section>
 
-  <section class="banda banda-fucsia confirma" id="confirma" aria-labelledby="confirma-titulo" hidden>
-    <div class="wrap confirma-inner" data-revelar>
-      <p class="eyebrow centro">Confirma tu asistencia</p>
-      <h2 class="titulo" id="confirma-titulo">¿Nos acompañas?</h2>
-      <p class="confirma-texto" id="confirma-texto"></p>
-      <div class="acciones">
-        <a class="btn btn-negro" id="btn-si" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg>Sí, ahí estaré</a>
-        <a class="btn btn-linea" id="btn-no" target="_blank" rel="noopener">No podré ir</a>
-      </div>
-      <p class="confirma-num">Los botones abren WhatsApp. También puedes escribirle a <span data-campo="contacto"></span> al <span id="confirma-num"></span></p>
-    </div>
-  </section>
 </main>
 
 <footer class="pie">
@@ -604,9 +585,8 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
     direccion: "Avenida 2 #10-49",
     barrio: "San Luis",
     ciudad: "Cúcuta",
-    // Opcional: pega el enlace exacto de Google Maps o Waze. Si los dejas vacíos, se busca la dirección.
+    // Opcional: pega el enlace exacto de Google Maps. Si lo dejas vacío, se busca la dirección.
     enlaceGoogleMaps: "",
-    enlaceWaze: "",
     vestimenta: "",                           // Déjalo vacío para no mostrarlo
 
     sobreElla: {
@@ -635,11 +615,10 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
       ]
     },
 
-    // Deja whatsapp en "" para ocultar la sección de confirmación.
+    // El botón "Confirmar asistencia" abre WhatsApp con este número y este mensaje.
     confirmacion: {
-      whatsapp: "",                          // Con indicativo del país, sin + ni espacios. Ej.: "573001234567"
-      contacto: "",
-      antesDe: "2026-10-25"                  // AAAA-MM-DD
+      whatsapp: "573002366480",              // Con indicativo del país (57), sin + ni espacios
+      mensaje: "¡Claro que sí, estaré allí! 💃🥂"
     },
 
     firma: "Con cariño, su familia",
@@ -676,8 +655,7 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
     lugarDetalle: CONFIG.lugar ? `${CONFIG.direccion} · ${zonaLugar}` : zonaLugar,
     direccionCompleta,
     vestimenta: CONFIG.vestimenta,
-    firma: CONFIG.firma,
-    contacto: CONFIG.confirmacion.contacto
+    firma: CONFIG.firma
   };
 
   $$("[data-campo]").forEach(el => {
@@ -693,32 +671,12 @@ html.abierto .hero-bajar{animation:subir .9s cubic-bezier(.2,.7,.2,1) 1.9s both}
   $("#ella-titulo").textContent = CONFIG.sobreElla.titulo;
   parrafos($("#ella-desc"), CONFIG.sobreElla.texto);
 
-  /* ---------- Mapa, calendario y WhatsApp ---------- */
+  /* ---------- Mapa y WhatsApp ---------- */
   const consultaMapa = `${direccionCompleta}, Colombia`;
   $("#mapa").src = `https://maps.google.com/maps?q=${enc(consultaMapa)}&z=16&hl=es&output=embed`;
   $("#btn-maps").href = CONFIG.enlaceGoogleMaps || `https://www.google.com/maps/search/?api=1&query=${enc(consultaMapa)}`;
-  $("#btn-waze").href = CONFIG.enlaceWaze || `https://waze.com/ul?q=${enc(consultaMapa)}&navigate=yes`;
-
-  const marcaUTC = d => d.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
-  $("#btn-calendario").href = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
-    `&text=${enc(`Los ${CONFIG.edad} de ${CONFIG.nombre}`)}` +
-    `&dates=${marcaUTC(inicio)}/${marcaUTC(fin)}` +
-    `&details=${enc(`Celebración de los ${CONFIG.edad} años de ${CONFIG.nombre} ${CONFIG.apellidos}.`)}` +
-    `&location=${enc(direccionCompleta)}`;
-
   const wa = CONFIG.confirmacion.whatsapp.replace(/\D/g, "");
-  if (wa) {
-    $("#confirma").hidden = false;
-    const antes = fmt({ day: "numeric", month: "long" }, new Date(CONFIG.confirmacion.antesDe + "T12:00:00-05:00"));
-    $("#confirma-texto").textContent = `Confírmanos antes del ${antes} para guardarte un puesto.`;
-    const enlaceWa = texto => `https://wa.me/${wa}?text=${enc(texto)}`;
-    const saludo = textos.contacto ? `, ${textos.contacto}` : "";
-    $("#btn-si").href = enlaceWa(`¡Hola${saludo}! Confirmo que voy a los ${CONFIG.edad} de ${CONFIG.nombre} (${fechaCorta.toLowerCase()}). Vamos ___ personas.`);
-    $("#btn-no").href = enlaceWa(`Hola${saludo}. Qué pena, no voy a poder ir a los ${CONFIG.edad} de ${CONFIG.nombre}. ¡Le mando un abrazo muy grande!`);
-    $("#confirma-num").textContent = wa.startsWith("57") && wa.length === 12
-      ? `+57 ${wa.slice(2, 5)} ${wa.slice(5, 8)} ${wa.slice(8)}`
-      : `+${wa}`;
-  }
+  $("#btn-confirmar").href = `https://wa.me/${wa}?text=${enc(CONFIG.confirmacion.mensaje)}`;
 
   /* ---------- Aviso flotante ---------- */
   const aviso = $("#aviso");
