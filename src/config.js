@@ -29,7 +29,7 @@ export const CONFIG = {
   },
 
   // Fotos en public/galeria/mini (cuadradas) y public/galeria/grande (completas): 01.jpg, 02.jpg…
-  totalFotos: 44,
+  totalFotos: 45,
 
   regalo: {
     titulo: "Tormenta de sobres",
