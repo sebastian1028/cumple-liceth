@@ -1,2 +1,4 @@
-# Fotos originales: la página usa las versiones de galeria/
+node_modules/
+dist/
+# Fotos originales: la página usa las versiones de public/galeria/
 fotos/
