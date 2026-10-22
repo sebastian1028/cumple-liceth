@@ -18,6 +18,7 @@ export default function Detalles() {
         })
         .from(".tarjeta", { y: 70, scale: 0.92, rotationX: 12, transformPerspective: 900, autoAlpha: 0, duration: 1.4 })
         .from(".aparece", { y: 26, autoAlpha: 0, duration: 1, stagger: 0.08 }, "-=0.9")
+        .from(".acciones .btn", { scale: 0.9, duration: 0.8, stagger: 0.1, ease: "back.out(2)" }, "<0.5")
         .from(".adorno", { scaleX: 0, duration: 1.2 }, "-=1.4");
     },
     { scope: raiz }

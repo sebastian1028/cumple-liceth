@@ -20,20 +20,24 @@ export default function Hero({ iniciar }) {
           { yPercent: 60, rotationX: -95, autoAlpha: 0, transformOrigin: "50% 100%", duration: 1.7, stagger: 0.2 },
           "-=0.6"
         )
+        .from(".hero-anios", { y: 20, autoAlpha: 0, duration: 1.1 }, "-=1")
         .fromTo(
           ".hero-nombre",
           { clipPath: "inset(-40% 100% -40% -10%)" },
           { clipPath: "inset(-40% -10% -40% -10%)", duration: 2, ease: "power2.inOut" },
-          "-=1.1"
+          "-=0.7"
         )
         .from(".hero-apellidos", { autoAlpha: 0, letterSpacing: "1.1em", duration: 1.5 }, "-=1.1")
         .from(".hero-fecha", { y: 18, autoAlpha: 0, duration: 1 }, "-=0.9")
         .from(".hero-bajar", { y: 12, autoAlpha: 0, duration: 0.8 }, "-=0.5");
 
-      // Al bajar, el 50 se aleja y el nombre sube un poco más rápido
-      const alBajar = { trigger: raiz.current, start: "top top", end: "bottom top", scrub: true };
-      gsap.to(".hero-cifra", { yPercent: 22, scale: 0.88, autoAlpha: 0.2, ease: "none", scrollTrigger: alBajar });
-      gsap.to(".hero-nombre-wrap", { yPercent: -35, ease: "none", scrollTrigger: alBajar });
+      // Al bajar, el 50 se aleja y se desvanece
+      gsap.to(".hero-cifra", {
+        scale: 0.9,
+        autoAlpha: 0.25,
+        ease: "none",
+        scrollTrigger: { trigger: raiz.current, start: "top top", end: "bottom top", scrub: true },
+      });
     },
     { scope: raiz }
   );
@@ -45,7 +49,7 @@ export default function Hero({ iniciar }) {
   return (
     <header className="hero" id="inicio" ref={raiz}>
       <div className="wrap hero-inner">
-        <p className="eyebrow centro hero-eyebrow">Te invitamos a celebrar</p>
+        <p className="eyebrow centro hero-eyebrow">Te invitamos a celebrar los</p>
         <p className="hero-cifra" aria-hidden="true">
           {String(CONFIG.edad)
             .split("")
@@ -54,6 +58,9 @@ export default function Hero({ iniciar }) {
                 {d}
               </span>
             ))}
+        </p>
+        <p className="hero-anios" aria-hidden="true">
+          años
         </p>
         <div className="hero-nombre-wrap">
           <h1 className="hero-nombre">
