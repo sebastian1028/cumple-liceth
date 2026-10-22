@@ -2,7 +2,7 @@
    DATOS DE LA TARJETA — cambia solo este archivo
    ================================================================ */
 export const CONFIG = {
-  nombre: "Liseth Yaneth",
+  nombre: "Liceth Yaneth",
   apellidos: "Santafe Vasquez",
   nombrePortada: "Yaneth Santafe", // El nombre grande en letra cursiva de la portada
   edad: 50,
@@ -23,7 +23,7 @@ export const CONFIG = {
   sobreElla: {
     titulo: "Medio siglo para celebrar",
     texto: [
-      "Este 27 de octubre Liseth Yaneth cumple 50 años, y queremos celebrarlo con las personas que más quiere.",
+      "Este 27 de octubre Liceth Yaneth cumple 50 años, y queremos celebrarlo con las personas que más quiere.",
       "Acompáñanos a brindar por ella, por todo lo vivido y por todo lo que viene.",
     ],
   },

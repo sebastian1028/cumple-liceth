@@ -1,4 +1,4 @@
-# Los 50 de Liseth Yaneth
+# Los 50 de Liceth Yaneth
 
 Invitación web de cumpleaños: https://sebastian1028.github.io/cumple-liseth/
 
